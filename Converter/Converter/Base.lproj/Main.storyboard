@@ -36,6 +36,9 @@
                                     <segment title="Eu"/>
                                     <segment title="Us"/>
                                 </segments>
+                                <connections>
+                                    <action selector="currencyChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2Z4-ue-afo"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose currency and type value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAS-ha-LV7">
                                 <rect key="frame" x="83.666666666666686" y="110" width="247" height="21"/>

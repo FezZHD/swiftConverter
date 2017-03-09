@@ -10,11 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        currencySelector.selectedSegmentIndex = 0;
+        currentCurrency = 3.240;
     }
-
+    private var currentCurrency :Double!;
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -24,6 +28,21 @@ class ViewController: UIViewController {
 
     @IBOutlet var enteredValue: UITextField!
 
+    @IBAction func currencyChanged(_ sender: UISegmentedControl) {
+        switch currencySelector.selectedSegmentIndex {
+        case 0:
+            currentCurrency = 3.265;
+            break;
+        case 1:
+            currentCurrency = 2.209;
+            break;
+        case 2:
+            currentCurrency = 1.897;
+            break;
+        default:
+            break;
+        }
+    }
 
     @IBAction func buttonClick(_ sender: Any) {
         if (enteredValue.text!.isEmpty)
