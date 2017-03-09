@@ -23,12 +23,16 @@ class ViewController: UIViewController {
     @IBOutlet var currencySelector: UISegmentedControl!
 
     @IBOutlet var enteredValue: UITextField!
-    @IBAction func convertButtonClick(_ sender: Any) {
+
+
+    @IBAction func buttonClick(_ sender: Any) {
         if (enteredValue.text!.isEmpty)
         {
-            let alert = UIAlertAction(title: "Empty field", style:UIAlertActionStyle.default , handler: nil);
+            let alert = UIAlertController(title: "Error", message: "Please, enter value", preferredStyle: UIAlertControllerStyle.alert);
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:nil));
+            self.present(alert, animated: true, completion: nil);
+            return;
         }
     }
-
 }
 

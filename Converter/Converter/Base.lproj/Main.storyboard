@@ -26,7 +26,7 @@
                                 <edgeInsets key="layoutMargins" top="80" left="0.0" bottom="0.0" right="0.0"/>
                                 <state key="normal" title="Convert"/>
                                 <connections>
-                                    <action selector="convertButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="las-EA-dOl"/>
+                                    <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Vk-Tk-vqT"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="332-HY-xg0">
@@ -64,7 +64,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="convertButtonClick" destination="yMx-So-idi" id="Qrv-7L-4Xc"/>
                         <outlet property="currencySelector" destination="332-HY-xg0" id="ZGL-tP-Xqh"/>
                         <outlet property="enteredValue" destination="84I-59-Ey3" id="D6I-iP-aAO"/>
                     </connections>
