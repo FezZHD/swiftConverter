@@ -18,11 +18,13 @@ class ViewController: UIViewController {
         currencySelector.selectedSegmentIndex = 0;
         currentCurrency = 3.240;
     }
+    
     private var currentCurrency :Double!;
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBOutlet var resultLabel: UILabel!
     
     @IBOutlet var currencySelector: UISegmentedControl!
 
@@ -45,13 +47,35 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClick(_ sender: Any) {
-        if (enteredValue.text!.isEmpty)
-        {
-            let alert = UIAlertController(title: "Error", message: "Please, enter value", preferredStyle: UIAlertControllerStyle.alert);
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:nil));
-            self.present(alert, animated: true, completion: nil);
+        if (enteredValue.text!.isEmpty) {
+            self.present(makeAlert(message: "Please, enter value"), animated: true, completion: nil);
             return;
         }
+        let value = Double(enteredValue.text!);
+        if (value == nil)
+        {
+            self.present(makeAlert(message: "Please, enter correct value"), animated: true, completion: nil);
+            return;
+        }
+        var count:Double;
+        if (currencySelector.selectedSegmentIndex == 0)
+        {
+            count = 100;
+        }
+        else
+        {
+            count = 1;
+        }
+        let result = value! * currentCurrency / count;
+        
+        resultLabel.text = String(result);
+    }
+    
+    
+    func makeAlert(message:String) -> UIAlertController {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert);
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:nil));
+        return alert;
     }
 }
 

@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMx-So-idi">
-                                <rect key="frame" x="180" y="656" width="55" height="30"/>
+                                <rect key="frame" x="179.66666666666666" y="656" width="55" height="30"/>
                                 <edgeInsets key="layoutMargins" top="80" left="0.0" bottom="0.0" right="0.0"/>
                                 <state key="normal" title="Convert"/>
                                 <connections>
@@ -41,17 +41,23 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose currency and type value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAS-ha-LV7">
-                                <rect key="frame" x="83.666666666666686" y="110" width="247" height="21"/>
+                                <rect key="frame" x="83.666666666666686" y="110" width="247" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84I-59-Ey3">
-                                <rect key="frame" x="159" y="298" width="95.666666666666657" height="30"/>
+                                <rect key="frame" x="158.66666666666666" y="298" width="96" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJe-7f-KxJ">
+                                <rect key="frame" x="207" y="616" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -63,12 +69,15 @@
                             <constraint firstItem="332-HY-xg0" firstAttribute="centerX" secondItem="yMx-So-idi" secondAttribute="centerX" id="Osx-40-4jO"/>
                             <constraint firstItem="nAS-ha-LV7" firstAttribute="centerX" secondItem="332-HY-xg0" secondAttribute="centerX" id="YIK-Fn-uH8"/>
                             <constraint firstItem="332-HY-xg0" firstAttribute="top" secondItem="rXH-YP-cWK" secondAttribute="bottom" constant="150" id="edX-KZ-i6Q"/>
+                            <constraint firstItem="rJe-7f-KxJ" firstAttribute="centerX" secondItem="84I-59-Ey3" secondAttribute="centerX" id="gwp-HY-Unm"/>
                             <constraint firstItem="yMx-So-idi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qex-3q-cTw"/>
+                            <constraint firstItem="yMx-So-idi" firstAttribute="top" secondItem="rJe-7f-KxJ" secondAttribute="bottom" constant="40" id="vQ8-AH-K9s"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="currencySelector" destination="332-HY-xg0" id="ZGL-tP-Xqh"/>
                         <outlet property="enteredValue" destination="84I-59-Ey3" id="D6I-iP-aAO"/>
+                        <outlet property="resultLabel" destination="rJe-7f-KxJ" id="HRV-Ue-9GF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
