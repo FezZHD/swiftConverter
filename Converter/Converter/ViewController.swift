@@ -39,14 +39,23 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClick(_ sender: Any) {
-        if (enteredValue.text!.isEmpty) {
-            self.present(makeAlert(message: "Please, enter value"), animated: true, completion: nil);
-            return;
+        var value:Double = 0;
+        if (enteredValue.text!.isEmpty){
+            value = 1;
         }
-        var value = Double(enteredValue.text!);
-        if (value == nil)
+        else
         {
-            self.present(makeAlert(message: "Please, enter correct value"), animated: true, completion: nil);
+            if let temp = Double(enteredValue.text!){
+                value = temp;
+            }
+            else{
+                self.present(self.makeAlert(message: "Please, enter correct value"), animated: true, completion: nil);
+                return;
+            }
+        }
+        if (value < 0)
+        {
+            self.present(self.makeAlert(message: "Please, enter positive value"), animated: true, completion: nil);
             return;
         }
         if (value == 0)
@@ -59,23 +68,23 @@ class ViewController: UIViewController {
             case 0:
                 valueThird.text = "Eu";
                 valueSecond.text = "Us";
-                resultLabelFirst.text = convertRu(coefficient: 61, value: value!, counter: 1);
-                resultLabelSecond.text = convertRu(coefficient: 58.8, value: value!, counter: 1);
-                resultLabel.text = convertRu(coefficient: 30.6, value: value!, counter: 1);
+                resultLabelFirst.text = convertRu(coefficient: 61, value: value, counter: 1);
+                resultLabelSecond.text = convertRu(coefficient: 58.8, value: value, counter: 1);
+                resultLabel.text = convertRu(coefficient: 30.6, value: value, counter: 1);
                 break;
             case 1:
                 valueThird.text = "Ru";
                 valueSecond.text = "Us";
-                resultLabelFirst.text = convert(coefficient: 1.08, value: value!, counter: 1);
-                resultLabelSecond.text = convert(coefficient: 61.7, value: value!, counter: 1);
-                resultLabel.text = convert(coefficient: 2.03, value: value!, counter: 1);
+                resultLabelFirst.text = convert(coefficient: 1.08, value: value, counter: 1);
+                resultLabelSecond.text = convert(coefficient: 61.7, value: value, counter: 1);
+                resultLabel.text = convert(coefficient: 2.03, value: value, counter: 1);
                 break;
             case 2:
                 valueThird.text = "Eu";
                 valueSecond.text = "Ru";
-                resultLabelFirst.text = convert(coefficient: 57.16, value: value!, counter: 1);
-                resultLabelSecond.text = convert(coefficient: 0.94, value: value!, counter: 1);
-                resultLabel.text = convert(coefficient: 1.9, value: value!, counter: 1);
+                resultLabelFirst.text = convert(coefficient: 57.16, value: value, counter: 1);
+                resultLabelSecond.text = convert(coefficient: 0.94, value: value, counter: 1);
+                resultLabel.text = convert(coefficient: 1.9, value: value, counter: 1);
                 break;
             default:
                 break;
